@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import ServicesShowcase from '@/components/ServicesShowcase';
-import BaseSkins from '@/components/BaseSkins';
 import HowItWorks from '@/components/HowItWorks';
 import DiscordStatus from '@/components/DiscordStatus';
 import Community from '@/components/Community';
@@ -27,7 +26,6 @@ export default function App() {
         <Hero />
         <Features />
         <ServicesShowcase />
-        <BaseSkins />
         <HowItWorks />
         <DiscordStatus />
         <Community />
