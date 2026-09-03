@@ -42,7 +42,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .animate-float, .animate-drift, .animate-drift-slow, .animate-pulse-ring { animation: none; }
+  .animate-float, .animate-drift, .animate-drift-slow, .animate-fall, .animate-pulse-ring {
+    animation: none;
+  }
   .refresh-pop { animation: none; opacity: 0; }
 }
