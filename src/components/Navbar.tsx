@@ -4,7 +4,6 @@ import { DISCORD_INVITE, SERVER_LOGO, SERVER_NAME } from '@/lib/constants';
 
 const links = [
   { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
   { label: 'Features', href: '#features' },
   { label: 'How it works', href: '#how-it-works' },
   { label: 'Community', href: '#community' },
@@ -71,7 +70,6 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 bg-white border-b border-brand-100 ${
           open ? 'max-h-96' : 'max-h-0'
