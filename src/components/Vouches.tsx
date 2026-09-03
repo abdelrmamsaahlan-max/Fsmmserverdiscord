@@ -20,14 +20,14 @@ export default function Vouches() {
 
         <div className="mt-12 grid lg:grid-cols-[1.15fr_.85fr] gap-6 items-stretch">
           <div className="relative overflow-hidden rounded-3xl border border-brand-100 bg-gradient-to-br from-brand-700 via-brand-800 to-brand-950 p-7 sm:p-9 text-white shadow-2xl shadow-brand-900/15 reveal">
-            <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-white/10 blur-3xl" />
+            <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-white/[0.10] blur-3xl" />
             <div className="relative">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/12 border border-white/15">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/[0.12] border border-white/[0.15]">
                 <MessageSquareQuote className="h-6 w-6 text-white" />
               </div>
               <p className="mt-7 text-xs font-bold uppercase tracking-[0.18em] text-brand-200">FSMM vouch system</p>
               <h3 className="mt-3 font-display text-2xl sm:text-3xl font-extrabold tracking-tight">Real feedback belongs in the community.</h3>
-              <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-white/78">Open the server to review the current vouches, ask questions, and get the latest information before arranging a middleman request or base paint.</p>
+              <p className="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-white/[0.78]">Open the server to review the current vouches, ask questions, and get the latest information before arranging a middleman request or base paint.</p>
               <a href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-brand-800 shadow-lg shadow-black/10 hover:-translate-y-0.5 hover:shadow-xl transition-all active:translate-y-0 active:scale-95">
                 Open vouches in Discord <ArrowUpRight className="h-4 w-4" />
               </a>
