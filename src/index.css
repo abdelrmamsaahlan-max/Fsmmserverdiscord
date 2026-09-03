@@ -32,7 +32,17 @@ body {
 .reveal-delay-2 { transition-delay: 240ms; }
 .reveal-delay-3 { transition-delay: 360ms; }
 
+/* Cute character that briefly pops in after a full page refresh */
+@keyframes refreshPop {
+  0% { opacity: 0; transform: translateY(30px) scale(0.72) rotate(-8deg); }
+  18% { opacity: 1; transform: translateY(-8px) scale(1.05) rotate(3deg); }
+  34% { transform: translateY(0) scale(1) rotate(0deg); }
+  72% { opacity: 1; transform: translateY(-4px) scale(1.02) rotate(-2deg); }
+  100% { opacity: 0; transform: translateY(18px) scale(0.9) rotate(5deg); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .animate-float, .animate-drift, .animate-drift-slow, .animate-pulse-ring { animation: none; }
+  .refresh-pop { animation: none; opacity: 0; }
 }
