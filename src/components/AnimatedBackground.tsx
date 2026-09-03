@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const SAB_VIDEO_ID = 'e4Y-ev1YZio';
+const SAB_VIDEO_ID = '-H4TNdg6rQ4';
 
 /**
  * Full-page SAB gameplay video background with a subtle blue overlay.
@@ -34,11 +34,8 @@ export default function AnimatedBackground() {
         </div>
       )}
 
-      {/* Darken the footage so the FSMM UI stays readable. */}
       <div className="absolute inset-0 bg-slate-950/65" />
       <div className="absolute inset-0 bg-brand-950/35 mix-blend-multiply" />
-
-      {/* Soft blue depth near the edges. */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,transparent_0%,rgba(2,6,23,0.18)_45%,rgba(2,6,23,0.7)_100%)]" />
     </div>
   );
