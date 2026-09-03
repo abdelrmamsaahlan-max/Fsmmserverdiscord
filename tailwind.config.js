@@ -45,6 +45,12 @@ export default {
           '50%': { transform: 'translate(-30px, 20px) rotate(-180deg)' },
           '100%': { transform: 'translate(0, 0) rotate(-360deg)' },
         },
+        'fall': {
+          '0%': { transform: 'translate3d(0, -12vh, 0)', opacity: '0' },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '0.7' },
+          '100%': { transform: 'translate3d(18px, 112vh, 0)', opacity: '0' },
+        },
         'shimmer': {
           '0%': { backgroundPosition: '200% center' },
           '100%': { backgroundPosition: '-200% center' },
@@ -56,6 +62,7 @@ export default {
         'pulse-ring': 'pulse-ring 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'drift': 'drift 18s ease-in-out infinite',
         'drift-slow': 'drift-slow 24s ease-in-out infinite',
+        'fall': 'fall 18s linear infinite',
         'shimmer': 'shimmer 3s linear infinite',
       },
     },
