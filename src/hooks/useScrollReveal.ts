@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 
 /**
- * Adds a scroll-reveal effect to every element with the `reveal` class.
- * Uses IntersectionObserver — when an element enters the viewport it
- * gets the `is-visible` class which transitions it into place.
+ * Reveals sections as they enter the viewport without running a continuous
+ * scroll handler. Once revealed, elements are unobserved to save work.
  */
 export function useScrollReveal() {
   useEffect(() => {
@@ -15,14 +14,14 @@ export function useScrollReveal() {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        for (const entry of entries) {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
             observer.unobserve(entry.target);
           }
-        });
+        }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+      { threshold: 0.08, rootMargin: '0px 0px -24px 0px' },
     );
 
     els.forEach((el) => observer.observe(el));
