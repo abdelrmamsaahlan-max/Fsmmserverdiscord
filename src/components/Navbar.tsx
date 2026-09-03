@@ -4,9 +4,10 @@ import { DISCORD_INVITE, SERVER_NAME } from '@/lib/constants';
 
 const links = [
   { label: 'Home', href: '#home' },
-  { label: 'What We Offer', href: '#features' },
   { label: 'Services', href: '#services' },
+  { label: 'Base Painting', href: '#base-paints' },
   { label: 'Middleman', href: '#how-it-works' },
+  { label: 'Vouches', href: '#vouches' },
   { label: 'FAQ', href: '#faq' },
 ];
 
@@ -19,16 +20,38 @@ function BrandMark() {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 12); onScroll(); window.addEventListener('scroll', onScroll, { passive: true }); return () => window.removeEventListener('scroll', onScroll); }, []);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-out ${scrolled ? 'bg-white/85 backdrop-blur-md shadow-lg shadow-brand-900/5 border-b border-brand-100' : 'bg-transparent'}`}>
+    <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-out ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-lg shadow-brand-900/5 border-b border-brand-100' : 'bg-transparent'}`}>
       <nav className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between transition-all duration-500">
-        <a href="#home" className="flex items-center gap-2.5 group"><BrandMark /><span className="font-display text-xl font-extrabold tracking-tight text-brand-900">{SERVER_NAME}</span></a>
-        <ul className="hidden lg:flex items-center gap-1">{links.map((l) => <li key={l.href}><a href={l.href} className="relative px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors after:absolute after:left-1/2 after:-bottom-0.5 after:h-0.5 after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-brand-600 after:transition-all after:duration-300 hover:after:w-5">{l.label}</a></li>)}</ul>
-        <div className="hidden md:flex items-center gap-3"><a href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 hover:bg-brand-700 hover:shadow-brand-700/40 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-95">Join FSMM</a></div>
-        <button onClick={() => setOpen((v) => !v)} className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg text-brand-800 hover:bg-brand-50 transition-colors" aria-label="Toggle navigation">{open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}</button>
+        <a href="#home" className="flex items-center gap-2.5 group" aria-label={`${SERVER_NAME} home`}><BrandMark /><span className="font-display text-xl font-extrabold tracking-tight text-brand-900">{SERVER_NAME}</span></a>
+
+        <ul className="hidden xl:flex items-center gap-1">
+          {links.map((l) => (
+            <li key={l.href}><a href={l.href} className="relative px-2.5 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-all after:absolute after:left-1/2 after:-bottom-0.5 after:h-0.5 after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-brand-600 after:transition-all after:duration-300 hover:after:w-5">{l.label}</a></li>
+          ))}
+        </ul>
+
+        <div className="hidden md:flex items-center gap-3">
+          <a href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 hover:bg-brand-700 hover:shadow-brand-700/40 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-95">Join FSMM</a>
+        </div>
+
+        <button onClick={() => setOpen((v) => !v)} className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg text-brand-800 hover:bg-brand-50 transition-colors" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open}>{open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}</button>
       </nav>
-      <div className={`md:hidden overflow-hidden transition-all duration-300 bg-white border-b border-brand-100 ${open ? 'max-h-[32rem]' : 'max-h-0'}`}><ul className="px-5 py-3 space-y-1">{links.map((l) => <li key={l.href}><a href={l.href} onClick={() => setOpen(false)} className="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors">{l.label}</a></li>)}<li className="pt-2"><a href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="block text-center rounded-xl bg-brand-600 px-5 py-3 text-base font-semibold text-white shadow-lg shadow-brand-600/25">Join FSMM</a></li></ul></div>
+
+      <div className={`md:hidden overflow-hidden transition-all duration-300 bg-white border-b border-brand-100 ${open ? 'max-h-[42rem]' : 'max-h-0'}`}>
+        <ul className="px-5 py-3 space-y-1">
+          {links.map((l) => <li key={l.href}><a href={l.href} onClick={() => setOpen(false)} className="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors">{l.label}</a></li>)}
+          <li className="pt-2"><a href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="block text-center rounded-xl bg-brand-600 px-5 py-3 text-base font-semibold text-white shadow-lg shadow-brand-600/25 active:scale-[.99] transition-transform">Join FSMM</a></li>
+        </ul>
+      </div>
     </header>
   );
 }
