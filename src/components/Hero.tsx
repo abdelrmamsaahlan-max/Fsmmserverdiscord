@@ -1,5 +1,7 @@
 import { Users, MessageCircle, Sparkles } from 'lucide-react';
-import { DISCORD_INVITE, SERVER_LOGO, SERVER_NAME } from '@/lib/constants';
+import { DISCORD_INVITE, SERVER_NAME } from '@/lib/constants';
+
+const SERVER_LOGO = 'https://cdn.discordapp.com/attachments/1429547493187784835/1544878711336083606/02177081896787500000000000000000000ffffac183399eb0c9f_V1_V1.gif?ex=6a9a1beb&is=6a98ca6b&hm=a36dcdb0e7a32f99bfca23a31dbaddf1eea627418d2be79ff9ba1eb38d6c1d9c&';
 
 const stats = [
   { icon: Users, label: 'Community', value: 'SAB' },
