@@ -4,8 +4,10 @@ import Features from '@/components/Features';
 import ServicesShowcase from '@/components/ServicesShowcase';
 import BasesWePaint from '@/components/BasesWePaint';
 import HowItWorks from '@/components/HowItWorks';
-import DiscordStatus from '@/components/DiscordStatus';
 import Community from '@/components/Community';
+import CommunityPulse from '@/components/CommunityPulse';
+import Vouches from '@/components/Vouches';
+import DiscordStatus from '@/components/DiscordStatus';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -29,8 +31,10 @@ export default function App() {
         <ServicesShowcase />
         <BasesWePaint />
         <HowItWorks />
-        <DiscordStatus />
         <Community />
+        <CommunityPulse />
+        <Vouches />
+        <DiscordStatus />
         <FAQ />
         <CTA />
       </main>
