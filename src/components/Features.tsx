@@ -1,16 +1,16 @@
 import { Paintbrush, Handshake, ShieldCheck, Users, Gamepad2, TrendingUp } from 'lucide-react';
 
 const basePaints = [
-  { name: 'Candy', index: '100% Index', img: 'https://images.weserv.nl/?url=stealabrainrot.fandom.com/wiki/Special:Redirect/file/Candy_Base.png' },
-  { name: 'Lava', index: '100% Index', img: 'https://images.weserv.nl/?url=stealabrainrot.fandom.com/wiki/Special:Redirect/file/Lava_Base.png' },
-  { name: 'Galaxy', index: '100% Index', img: 'https://images.weserv.nl/?url=stealabrainrot.fandom.com/wiki/Special:Redirect/file/Galaxy_Base.png' },
-  { name: 'Yin Yang', index: '75% Index', img: 'https://images.weserv.nl/?url=stealabrainrot.fandom.com/wiki/Special:Redirect/file/Yin_Yang_Base.png' },
-  { name: 'Radioactive', index: '75% Index', img: 'https://images.weserv.nl/?url=stealabrainrot.fandom.com/wiki/Special:Redirect/file/Radioactive_Base.png' },
-  { name: 'Cursed', index: '60% Index', img: 'https://images.weserv.nl/?url=stealabrainrot.fandom.com/wiki/Special:Redirect/file/Cursed_Base.png' },
-  { name: 'Divine', index: '60% Index', img: 'https://images.weserv.nl/?url=stealabrainrot.fandom.com/wiki/Special:Redirect/file/Divine_Base.png' },
-  { name: 'Cyber', index: '60% Index', img: 'https://images.weserv.nl/?url=stealabrainrot.fandom.com/wiki/Special:Redirect/file/Cyber_Base.png' },
-  { name: 'Phantom', index: '60% Index', img: 'https://images.weserv.nl/?url=stealabrainrot.fandom.com/wiki/Special:Redirect/file/Phantom_Base.png' },
-  { name: 'Crystal', index: '50% Index', img: 'https://images.weserv.nl/?url=stealabrainrot.fandom.com/wiki/Special:Redirect/file/Crystal_Base.png' },
+  { name: 'Candy', index: '100% Index', img: 'https://static.deltiasgaming.com/2025/07/SABBBLGUM.jpg' },
+  { name: 'Lava', index: '100% Index', img: 'https://production-gameflipusercontent.fingershock.com/us-east-1%3Aaf24902d-c395-4798-a9b4-2b6bc0082d61/2d8b2a0d-93c9-474f-bf2d-c46c17f3e85c/af238b44-e3b7-44a0-9128-0aa8fec19b30/640x640.webp' },
+  { name: 'Galaxy', index: '100% Index', img: 'https://production-gameflipusercontent.fingershock.com/us-east-1%3A3c2bf098-4afa-4dbc-a246-4a9f0d8fa3b1/5d53aa10-78fc-4dfa-b529-987a39e67ded/7ad4a795-599b-4892-87a0-c1e0654af804/640x640.webp' },
+  { name: 'Yin Yang', index: '75% Index', img: 'https://res.ldrescdn.com/rms/ldplayer/process/img/7a1dd224e8014bccba514e4c57e5702f1763234424.png?x-oss-process=image%2Fformat%2Cwebp%2Fquality%2CQ_100%2Fresize%2Cw_1024' },
+  { name: 'Radioactive', index: '75% Index', img: 'https://staticimg.publishstory.co/thumb/126629822.cms?height=900&imgsize=51672&resizemode=8&width=1200' },
+  { name: 'Cursed', index: '60% Index', img: 'https://allthings.how/content/images/2026/01/image-1215-1.png' },
+  { name: 'Divine', index: '60% Index', img: 'https://files.bo3.gg/uploads/image/113456/image/webp-d2c3dae306b0814d44aba61b5c1ff99e.webp' },
+  { name: 'Cyber', index: '60% Index', img: 'https://www.lolga.com/uploads/images/news/cyber-base.png' },
+  { name: 'Phantom', index: '60% Index', img: 'https://www.u7buy.com/blog/wp-content/uploads/2025/09/All-Rituals-in-Roblox-Steal-a-Brainrot-1.jpg' },
+  { name: 'Crystal', index: '50% Index', img: 'https://upload.wikimedia.org/wikipedia/en/e/e0/Steal_a_Brainrot_gameplay.png' },
 ];
 
 const features = [
