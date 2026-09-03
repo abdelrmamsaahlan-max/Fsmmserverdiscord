@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Clean white FSMM background with very subtle floating snow-like particles.
- * Keeps the site light, minimal, and gently animated without distracting from content.
+ * Soft, eye-friendly FSMM background with subtle snowfall, drifting light,
+ * and tiny floating particles. Decorative only and never blocks interaction.
  */
 export default function AnimatedBackground() {
   const ref = useRef<HTMLDivElement>(null);
@@ -15,7 +15,7 @@ export default function AnimatedBackground() {
     const onScroll = () => {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
-        el.style.setProperty('--parallax', `${window.scrollY * 0.04}px`);
+        el.style.setProperty('--parallax', `${window.scrollY * 0.035}px`);
       });
     };
 
@@ -30,27 +30,32 @@ export default function AnimatedBackground() {
     <div
       ref={ref}
       aria-hidden="true"
-      className="fixed inset-0 -z-50 overflow-hidden pointer-events-none bg-white"
+      className="fixed inset-0 -z-50 overflow-hidden pointer-events-none bg-slate-50"
       style={{ ['--parallax' as string]: '0px' }}
     >
-      <div className="absolute inset-0 bg-white" />
+      {/* Warm, softer base instead of pure white */}
+      <div className="absolute inset-0 bg-slate-50" />
 
-      {/* Very subtle blue atmosphere */}
+      {/* Very soft blue atmospheric glow */}
       <div
-        className="absolute -top-48 -left-40 h-[30rem] w-[30rem] rounded-full bg-brand-100/25 blur-3xl"
+        className="absolute -top-56 -left-48 h-[34rem] w-[34rem] rounded-full bg-brand-100/30 blur-3xl animate-drift-slow"
         style={{ transform: 'translateY(var(--parallax))' }}
       />
       <div
-        className="absolute -right-48 top-1/3 h-[26rem] w-[26rem] rounded-full bg-brand-50/35 blur-3xl"
+        className="absolute top-[28%] -right-52 h-[30rem] w-[30rem] rounded-full bg-blue-100/25 blur-3xl animate-drift"
         style={{ transform: 'translateY(calc(var(--parallax) * -0.5))' }}
       />
+      <div
+        className="absolute bottom-[-10rem] left-[35%] h-[26rem] w-[26rem] rounded-full bg-sky-100/20 blur-3xl"
+        style={{ transform: 'translateY(calc(var(--parallax) * 0.3))' }}
+      />
 
-      {/* Soft snowfall effect */}
-      <div className="absolute inset-0 opacity-45">
+      {/* Extremely subtle snowfall */}
+      <div className="absolute inset-0 opacity-35">
         {SNOW.map((flake, i) => (
           <span
             key={i}
-            className="absolute rounded-full bg-brand-300/40 animate-fall"
+            className="absolute rounded-full bg-brand-400/35 animate-fall"
             style={{
               top: flake.top,
               left: flake.left,
@@ -62,22 +67,49 @@ export default function AnimatedBackground() {
           />
         ))}
       </div>
+
+      {/* A few tiny drifting dust/light particles */}
+      <div className="absolute inset-0 opacity-25">
+        {PARTICLES.map((particle, i) => (
+          <span
+            key={i}
+            className="absolute rounded-full bg-brand-300/30 animate-float"
+            style={{
+              top: particle.top,
+              left: particle.left,
+              width: particle.size,
+              height: particle.size,
+              animationDelay: particle.delay,
+              animationDuration: particle.duration,
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }
 
 const SNOW = [
-  { top: '-4%', left: '8%', size: '3px', delay: '0s', duration: '13s' },
-  { top: '-10%', left: '18%', size: '2px', delay: '2s', duration: '16s' },
-  { top: '-6%', left: '29%', size: '4px', delay: '5s', duration: '14s' },
-  { top: '-12%', left: '41%', size: '2px', delay: '1s', duration: '18s' },
-  { top: '-5%', left: '52%', size: '3px', delay: '7s', duration: '15s' },
-  { top: '-8%', left: '63%', size: '2px', delay: '3s', duration: '17s' },
-  { top: '-11%', left: '74%', size: '4px', delay: '9s', duration: '14s' },
-  { top: '-5%', left: '86%', size: '2px', delay: '4s', duration: '19s' },
-  { top: '-14%', left: '94%', size: '3px', delay: '6s', duration: '16s' },
-  { top: '8%', left: '3%', size: '2px', delay: '8s', duration: '17s' },
-  { top: '20%', left: '23%', size: '3px', delay: '10s', duration: '15s' },
-  { top: '35%', left: '67%', size: '2px', delay: '11s', duration: '18s' },
-  { top: '55%', left: '91%', size: '3px', delay: '12s', duration: '16s' },
+  { top: '-4%', left: '7%', size: '3px', delay: '0s', duration: '15s' },
+  { top: '-10%', left: '18%', size: '2px', delay: '2s', duration: '18s' },
+  { top: '-6%', left: '30%', size: '3px', delay: '5s', duration: '16s' },
+  { top: '-12%', left: '42%', size: '2px', delay: '1s', duration: '20s' },
+  { top: '-5%', left: '54%', size: '3px', delay: '7s', duration: '17s' },
+  { top: '-8%', left: '66%', size: '2px', delay: '3s', duration: '19s' },
+  { top: '-11%', left: '77%', size: '3px', delay: '9s', duration: '16s' },
+  { top: '-5%', left: '88%', size: '2px', delay: '4s', duration: '21s' },
+  { top: '-14%', left: '96%', size: '3px', delay: '6s', duration: '18s' },
+  { top: '15%', left: '12%', size: '2px', delay: '8s', duration: '20s' },
+  { top: '31%', left: '52%', size: '3px', delay: '10s', duration: '17s' },
+  { top: '58%', left: '84%', size: '2px', delay: '12s', duration: '19s' },
+  { top: '76%', left: '28%', size: '3px', delay: '6s', duration: '18s' },
+];
+
+const PARTICLES = [
+  { top: '18%', left: '9%', size: '5px', delay: '0s', duration: '9s' },
+  { top: '38%', left: '24%', size: '4px', delay: '2s', duration: '11s' },
+  { top: '14%', left: '72%', size: '4px', delay: '4s', duration: '10s' },
+  { top: '52%', left: '63%', size: '5px', delay: '1s', duration: '12s' },
+  { top: '73%', left: '92%', size: '4px', delay: '5s', duration: '10s' },
+  { top: '86%', left: '47%', size: '5px', delay: '3s', duration: '13s' },
 ];
