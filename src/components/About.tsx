@@ -20,7 +20,7 @@ const reviewPlaceholders = [
 
 export default function About() {
   return (
-    <section id="reviews" className="relative py-20 sm:py-28 bg-white/40 backdrop-blur-sm">
+    <section id="about" className="relative py-20 sm:py-28 bg-white/40 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="reveal">
