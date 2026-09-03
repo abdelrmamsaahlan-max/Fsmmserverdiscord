@@ -48,7 +48,7 @@ export default function DiscordStatus() {
   return (
     <section className="relative py-14 sm:py-20">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-[34rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-400/10 blur-3xl fsmm-float-slow" />
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 reveal">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 reveal fsmm-crisp-reveal">
         <div className="group relative overflow-hidden rounded-[28px] border border-brand-300/60 bg-gradient-to-br from-brand-700 via-brand-600 to-blue-700 shadow-[0_25px_80px_rgba(37,99,235,0.22)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_90px_rgba(37,99,235,0.26)]">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(255,255,255,.14),transparent_28%),radial-gradient(circle_at_85%_80%,rgba(255,255,255,.08),transparent_30%)]" />
           <div className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full border border-white/10 bg-white/5 fsmm-float-slow" />
