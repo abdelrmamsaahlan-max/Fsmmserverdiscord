@@ -5,7 +5,6 @@ import ServicesShowcase from '@/components/ServicesShowcase';
 import HowItWorks from '@/components/HowItWorks';
 import DiscordStatus from '@/components/DiscordStatus';
 import Community from '@/components/Community';
-import CommunityVouches from '@/components/CommunityVouches';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -30,7 +29,6 @@ export default function App() {
         <HowItWorks />
         <DiscordStatus />
         <Community />
-        <CommunityVouches />
         <FAQ />
         <CTA />
       </main>
