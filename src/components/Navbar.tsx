@@ -1,14 +1,23 @@
 import { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { DISCORD_INVITE, SERVER_LOGO, SERVER_NAME } from '@/lib/constants';
+import { Menu, X, ShieldCheck } from 'lucide-react';
+import { DISCORD_INVITE, SERVER_NAME } from '@/lib/constants';
 
 const links = [
   { label: 'Home', href: '#home' },
   { label: 'Features', href: '#features' },
   { label: 'How it works', href: '#how-it-works' },
-  { label: 'Community', href: '#community' },
+  { label: 'Why FSMM', href: '#community' },
   { label: 'FAQ', href: '#faq' },
 ];
+
+function BrandMark() {
+  return (
+    <span className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 shadow-lg shadow-brand-500/25 transition-transform group-hover:scale-105">
+      <ShieldCheck className="h-5 w-5 text-white" strokeWidth={2.4} />
+      <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full bg-white ring-2 ring-brand-600" />
+    </span>
+  );
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -29,9 +38,7 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between transition-all duration-500">
         <a href="#home" className="flex items-center gap-2.5 group">
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-xl overflow-hidden bg-brand-900 shadow-lg shadow-brand-500/30 transition-transform group-hover:scale-105">
-            <img src={SERVER_LOGO} alt="FSMM logo" className="h-full w-full object-cover object-[50%_38%]" />
-          </span>
+          <BrandMark />
           <span className="font-display text-xl font-extrabold tracking-tight text-brand-900 transition-colors duration-300">
             {SERVER_NAME}
           </span>
@@ -40,10 +47,7 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-1">
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                className="relative px-4 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors after:absolute after:left-1/2 after:-bottom-0.5 after:h-0.5 after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-brand-600 after:transition-all after:duration-300 hover:after:w-5"
-              >
+              <a href={l.href} className="relative px-4 py-2 rounded-lg text-sm font-medium text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors after:absolute after:left-1/2 after:-bottom-0.5 after:h-0.5 after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-brand-600 after:transition-all after:duration-300 hover:after:w-5">
                 {l.label}
               </a>
             </li>
@@ -51,50 +55,27 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:flex items-center gap-3">
-          <a
-            href={DISCORD_INVITE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 hover:bg-brand-700 hover:shadow-brand-700/40 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
-          >
+          <a href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 hover:bg-brand-700 hover:shadow-brand-700/40 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
             Join Discord
           </a>
         </div>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg text-brand-800 hover:bg-brand-50 transition-colors"
-          aria-label="Toggle menu"
-        >
+        <button onClick={() => setOpen((v) => !v)} className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg text-brand-800 hover:bg-brand-50 transition-colors" aria-label="Toggle menu">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </nav>
 
-      <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-white border-b border-brand-100 ${
-          open ? 'max-h-96' : 'max-h-0'
-        }`}
-      >
+      <div className={`md:hidden overflow-hidden transition-all duration-300 bg-white border-b border-brand-100 ${open ? 'max-h-96' : 'max-h-0'}`}>
         <ul className="px-5 py-3 space-y-1">
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors"
-              >
+              <a href={l.href} onClick={() => setOpen(false)} className="block px-4 py-3 rounded-lg text-base font-medium text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors">
                 {l.label}
               </a>
             </li>
           ))}
           <li className="pt-2">
-            <a
-              href={DISCORD_INVITE}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-              className="block text-center rounded-xl bg-brand-600 px-5 py-3 text-base font-semibold text-white shadow-lg shadow-brand-600/25"
-            >
+            <a href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="block text-center rounded-xl bg-brand-600 px-5 py-3 text-base font-semibold text-white shadow-lg shadow-brand-600/25">
               Join Discord
             </a>
           </li>
