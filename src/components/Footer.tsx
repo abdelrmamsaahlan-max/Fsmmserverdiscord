@@ -1,5 +1,6 @@
 import { DISCORD_INVITE, SERVER_NAME } from '@/lib/constants';
-import { ShieldCheck } from 'lucide-react';
+
+const FSMM_GIF = 'https://cdn.discordapp.com/attachments/1429547493187784835/1544878711336083606/02177081896787500000000000000000000ffffac183399eb0c9f_V1_V1.gif?ex=6a9a1beb&is=6a98ca6b&hm=a36dcdb0e7a32f99bfca23a31dbaddf1eea627418d2be79ff9ba1eb38d6c1d9c&';
 
 export default function Footer() {
   const links = [
@@ -16,8 +17,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-10">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-600 shadow-lg shadow-brand-500/20">
-                <ShieldCheck className="h-5 w-5 text-white" strokeWidth={2.4} />
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl overflow-hidden bg-brand-600 shadow-lg shadow-brand-500/20">
+                <img src={FSMM_GIF} alt="FSMM" className="h-full w-full object-cover" />
               </span>
               <span className="font-display text-xl font-extrabold text-white">{SERVER_NAME}</span>
             </div>
