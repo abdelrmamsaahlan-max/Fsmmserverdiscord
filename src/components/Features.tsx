@@ -1,16 +1,16 @@
 import { Paintbrush, Handshake, ShieldCheck, Users, Gamepad2, TrendingUp } from 'lucide-react';
 
 const basePaints = [
-  { name: 'Candy', index: '100% Index', img: '/bases/candy.svg' },
-  { name: 'Lava', index: '100% Index', img: '/bases/lava.svg' },
-  { name: 'Galaxy', index: '100% Index', img: '/bases/galaxy.svg' },
-  { name: 'Yin Yang', index: '75% Index', img: '/bases/yin-yang.svg' },
-  { name: 'Radioactive', index: '75% Index', img: '/bases/radioactive.svg' },
-  { name: 'Cursed', index: '60% Index', img: '/bases/cursed.svg' },
-  { name: 'Divine', index: '60% Index', img: '/bases/divine.svg' },
-  { name: 'Cyber', index: '60% Index', img: '/bases/cyber.svg' },
-  { name: 'Phantom', index: '60% Index', img: '/bases/phantom.svg' },
-  { name: 'Crystal', index: '50% Index', img: '/bases/crystal.svg' },
+  { name: 'Candy', index: '100% Index', file: 'candy.svg' },
+  { name: 'Lava', index: '100% Index', file: 'lava.svg' },
+  { name: 'Galaxy', index: '100% Index', file: 'galaxy.svg' },
+  { name: 'Yin Yang', index: '75% Index', file: 'yin-yang.svg' },
+  { name: 'Radioactive', index: '75% Index', file: 'radioactive.svg' },
+  { name: 'Cursed', index: '60% Index', file: 'cursed.svg' },
+  { name: 'Divine', index: '60% Index', file: 'divine.svg' },
+  { name: 'Cyber', index: '60% Index', file: 'cyber.svg' },
+  { name: 'Phantom', index: '60% Index', file: 'phantom.svg' },
+  { name: 'Crystal', index: '50% Index', file: 'crystal.svg' },
 ];
 
 const features = [
@@ -23,6 +23,8 @@ const features = [
 ];
 
 export default function Features() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <section id="features" className="relative py-20 sm:py-28 bg-gradient-to-b from-white/40 to-brand-50/30 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
@@ -36,7 +38,16 @@ export default function Features() {
           {basePaints.map((b, i) => (
             <figure key={b.name} className={`group relative overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-brand-600/15 transition-all duration-500 reveal reveal-delay-${(i % 3) + 1}`}>
               <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
-                <img src={b.img} alt={`${b.name} base skin`} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                <img
+                  src={`${baseUrl}bases/${b.file}`}
+                  alt={`${b.name} base skin`}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  onError={(event) => {
+                    event.currentTarget.style.display = 'none';
+                  }}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/10 to-transparent" />
                 <figcaption className="absolute inset-x-0 bottom-0 p-3 sm:p-4 text-left">
                   <p className="font-display text-base sm:text-lg font-bold text-white">{b.name}</p>
