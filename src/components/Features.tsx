@@ -1,16 +1,26 @@
 import { Paintbrush, Handshake, ShieldCheck, Users, Gamepad2, TrendingUp, ArrowUpRight } from 'lucide-react';
+import candyBase from '@/assets/bases/candy.svg';
+import lavaBase from '@/assets/bases/lava.svg';
+import galaxyBase from '@/assets/bases/galaxy.svg';
+import yinYangBase from '@/assets/bases/yin-yang.svg';
+import radioactiveBase from '@/assets/bases/radioactive.svg';
+import cursedBase from '@/assets/bases/cursed.svg';
+import divineBase from '@/assets/bases/divine.svg';
+import cyberBase from '@/assets/bases/cyber.svg';
+import phantomBase from '@/assets/bases/phantom.svg';
+import crystalBase from '@/assets/bases/crystal.svg';
 
 const basePaints = [
-  { name: 'Candy', index: '100% Index', file: 'candy.svg' },
-  { name: 'Lava', index: '100% Index', file: 'lava.svg' },
-  { name: 'Galaxy', index: '100% Index', file: 'galaxy.svg' },
-  { name: 'Yin Yang', index: '75% Index', file: 'yin-yang.svg' },
-  { name: 'Radioactive', index: '75% Index', file: 'radioactive.svg' },
-  { name: 'Cursed', index: '60% Index', file: 'cursed.svg' },
-  { name: 'Divine', index: '60% Index', file: 'divine.svg' },
-  { name: 'Cyber', index: '60% Index', file: 'cyber.svg' },
-  { name: 'Phantom', index: '60% Index', file: 'phantom.svg' },
-  { name: 'Crystal', index: '50% Index', file: 'crystal.svg' },
+  { name: 'Candy', index: '100% Index', img: candyBase },
+  { name: 'Lava', index: '100% Index', img: lavaBase },
+  { name: 'Galaxy', index: '100% Index', img: galaxyBase },
+  { name: 'Yin Yang', index: '75% Index', img: yinYangBase },
+  { name: 'Radioactive', index: '75% Index', img: radioactiveBase },
+  { name: 'Cursed', index: '60% Index', img: cursedBase },
+  { name: 'Divine', index: '60% Index', img: divineBase },
+  { name: 'Cyber', index: '60% Index', img: cyberBase },
+  { name: 'Phantom', index: '60% Index', img: phantomBase },
+  { name: 'Crystal', index: '50% Index', img: crystalBase },
 ];
 
 const features = [
@@ -23,8 +33,6 @@ const features = [
 ];
 
 export default function Features() {
-  const baseUrl = import.meta.env.BASE_URL;
-
   return (
     <section id="features" className="relative overflow-hidden py-20 sm:py-28 bg-gradient-to-b from-white/55 via-brand-50/30 to-white/50 backdrop-blur-sm">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-300/70 to-transparent" />
@@ -42,20 +50,13 @@ export default function Features() {
             <figure key={b.name} className={`group relative overflow-hidden rounded-2xl border border-brand-100/90 bg-white shadow-sm fsmm-shine fsmm-glow hover:-translate-y-2 hover:border-brand-200 transition-all duration-500 reveal reveal-delay-${(i % 3) + 1}`}>
               <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-brand-50 to-slate-100">
                 <img
-                  src={`${baseUrl}bases/${b.file}?v=4`}
+                  src={b.img}
                   alt={`${b.name} base skin`}
                   loading={i < 5 ? 'eager' : 'lazy'}
                   decoding="async"
                   className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  onError={(event) => {
-                    const image = event.currentTarget;
-                    if (image.dataset.fallback) return;
-                    image.dataset.fallback = 'true';
-                    image.src = `${baseUrl}server-logo.svg`;
-                    image.className = 'h-full w-full object-contain p-16 opacity-80 transition-transform duration-700 ease-out group-hover:scale-110';
-                  }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/5 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/5 to-transparent pointer-events-none" />
                 <div className="absolute left-3 top-3 rounded-full border border-white/20 bg-slate-950/35 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white backdrop-blur-md">SAB Base</div>
                 <figcaption className="absolute inset-x-0 bottom-0 p-3 sm:p-4 text-left">
                   <p className="font-display text-base sm:text-lg font-bold text-white drop-shadow">{b.name}</p>
