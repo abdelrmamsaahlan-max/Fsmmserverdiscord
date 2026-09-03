@@ -1,16 +1,16 @@
 import { Paintbrush, Handshake, ShieldCheck, Users, Gamepad2, TrendingUp } from 'lucide-react';
 
 const basePaints = [
-  { name: 'Candy', index: '100% Index', img: 'https://gameboost.com/blog/all-base-skins-steal-a-brainrot/candy-base-skin.png' },
-  { name: 'Lava', index: '100% Index', img: 'https://gameboost.com/blog/all-base-skins-steal-a-brainrot/lava-base-skin.png' },
-  { name: 'Galaxy', index: '100% Index', img: 'https://gameboost.com/blog/all-base-skins-steal-a-brainrot/galaxy-base-skin.png' },
-  { name: 'Yin Yang', index: '75% Index', img: 'https://gameboost.com/blog/all-base-skins-steal-a-brainrot/yin-yang-base-skin.png' },
-  { name: 'Radioactive', index: '75% Index', img: 'https://gameboost.com/blog/all-base-skins-steal-a-brainrot/radioactive-base-skin.png' },
-  { name: 'Cursed', index: '60% Index', img: 'https://gameboost.com/blog/all-base-skins-steal-a-brainrot/cursed-base-skin.png' },
-  { name: 'Divine', index: '60% Index', img: 'https://gameboost.com/blog/all-base-skins-steal-a-brainrot/divine-base-skin.png' },
-  { name: 'Cyber', index: '60% Index', img: 'https://gameboost.com/blog/all-base-skins-steal-a-brainrot/cyber-base-skin.png' },
-  { name: 'Phantom', index: '60% Index', img: 'https://gameboost.com/blog/all-base-skins-steal-a-brainrot/phantom-base-skin.png' },
-  { name: 'Crystal', index: '50% Index', img: 'https://gameboost.com/blog/all-base-skins-steal-a-brainrot/crystal-base-skin.png' },
+  { name: 'Candy', index: '100% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Candy_Base.png' },
+  { name: 'Lava', index: '100% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Lava_Base.png' },
+  { name: 'Galaxy', index: '100% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Galaxy_Base.png' },
+  { name: 'Yin Yang', index: '75% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Yin_Yang_Base.png' },
+  { name: 'Radioactive', index: '75% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Radioactive_Base.png' },
+  { name: 'Cursed', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Cursed_Base.png' },
+  { name: 'Divine', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Divine_Base.png' },
+  { name: 'Cyber', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Cyber_Base.png' },
+  { name: 'Phantom', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Phantom_Base.png' },
+  { name: 'Crystal', index: '50% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Crystal_Base.png' },
 ];
 
 const features = [
@@ -35,8 +35,8 @@ export default function Features() {
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-5">
           {basePaints.map((b, i) => (
             <figure key={b.name} className={`group relative overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-brand-600/15 transition-all duration-500 reveal reveal-delay-${(i % 3) + 1}`}>
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img src={b.img} alt={`${b.name} base skin`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+              <div className="relative aspect-[4/5] overflow-hidden bg-slate-100">
+                <img src={b.img} alt={`${b.name} base skin`} loading="lazy" decoding="async" className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/10 to-transparent" />
                 <figcaption className="absolute inset-x-0 bottom-0 p-3 sm:p-4 text-left">
                   <p className="font-display text-base sm:text-lg font-bold text-white">{b.name}</p>
