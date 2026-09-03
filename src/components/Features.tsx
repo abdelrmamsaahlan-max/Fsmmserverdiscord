@@ -1,7 +1,7 @@
 import { Paintbrush, Handshake, ShieldCheck, Users, Gamepad2, TrendingUp } from 'lucide-react';
 
 const basePaints = [
-  { name: 'Candy', index: '100% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/e70616ba-3a4f-43d9-8ca8-0a78beceed56.webp' },
+  { name: 'Candy', index: '100% Index', img: 'https://www.lolga.com/uploads/images/goods/steal-a-brainrot/all-server-rebirthing-accountcandy-base.png' },
   { name: 'Lava', index: '100% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/eef64379-7c12-4b9e-a516-fd75c270ac4e.webp' },
   { name: 'Galaxy', index: '100% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/66a24204-030c-4366-b455-ecd4b6252e12.webp' },
   { name: 'Yin Yang', index: '75% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/8e0de5b8-5512-4b58-87ae-bbd3c996b8cc.webp' },
@@ -36,7 +36,7 @@ export default function Features() {
           {basePaints.map((b, i) => (
             <figure key={b.name} className={`group relative overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-sm hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-brand-600/15 transition-all duration-500 reveal reveal-delay-${(i % 3) + 1}`}>
               <div className="relative aspect-[4/5] overflow-hidden">
-                <img src={b.img} alt={`${b.name} base mutation`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                <img src={b.img} alt={`${b.name} base skin`} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/10 to-transparent" />
                 <figcaption className="absolute inset-x-0 bottom-0 p-3 sm:p-4 text-left">
                   <p className="font-display text-base sm:text-lg font-bold text-white">{b.name}</p>
