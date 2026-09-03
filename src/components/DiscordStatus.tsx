@@ -50,43 +50,43 @@ export default function DiscordStatus() {
   return (
     <section className="relative py-12 sm:py-16">
       <div className="mx-auto max-w-5xl px-5 sm:px-8 reveal">
-        <div className="rounded-2xl border border-slate-200 bg-white shadow-sm shadow-slate-200/60">
+        <div className="overflow-hidden rounded-2xl border border-brand-200 bg-brand-600 shadow-lg shadow-brand-600/15">
           <div className="flex flex-col gap-6 p-6 sm:p-7 lg:flex-row lg:items-center lg:justify-between">
             <div className="min-w-0">
               <div className="flex items-center gap-2.5">
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400/60" />
-                  <span className="relative h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                  <span className="absolute inset-0 animate-ping rounded-full bg-white/50" />
+                  <span className="relative h-2.5 w-2.5 rounded-full bg-white" />
                 </span>
-                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Discord community</span>
-                <span className="hidden h-1 w-1 rounded-full bg-slate-300 sm:block" />
-                <span className="text-xs text-emerald-600">Live</span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-blue-100">Discord community</span>
+                <span className="h-1 w-1 rounded-full bg-blue-200/70" />
+                <span className="text-xs font-medium text-white">Live</span>
               </div>
 
-              <h2 className="mt-2.5 font-display text-2xl font-bold tracking-tight text-slate-900 sm:text-[28px]">
+              <h2 className="mt-2.5 font-display text-2xl font-bold tracking-tight text-white sm:text-[28px]">
                 FSMM on Discord
               </h2>
-              <p className="mt-1.5 max-w-lg text-sm leading-6 text-slate-500">
+              <p className="mt-1.5 max-w-lg text-sm leading-6 text-blue-100/90">
                 Trade safely, request a middleman, get base painting help, and stay connected with the community.
               </p>
-              <p className="mt-2 text-[11px] text-slate-400">{updatedText}</p>
+              <p className="mt-2 text-[11px] text-blue-100/65">{updatedText}</p>
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <div className="flex divide-x divide-slate-200 rounded-xl border border-slate-200 bg-slate-50">
+              <div className="flex divide-x divide-blue-400/40 rounded-xl border border-blue-300/30 bg-white/10">
                 <div className="min-w-[105px] px-4 py-3">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                  <div className="flex items-center gap-1.5 text-xs text-blue-100">
                     <Users className="h-3.5 w-3.5" />
                     Members
                   </div>
-                  <p className="mt-1 text-lg font-semibold tabular-nums text-slate-900">{memberText}</p>
+                  <p className="mt-1 text-lg font-semibold tabular-nums text-white">{memberText}</p>
                 </div>
                 <div className="min-w-[105px] px-4 py-3">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                    <Wifi className="h-3.5 w-3.5 text-emerald-500" />
+                  <div className="flex items-center gap-1.5 text-xs text-blue-100">
+                    <Wifi className="h-3.5 w-3.5 text-white" />
                     Online
                   </div>
-                  <p className="mt-1 text-lg font-semibold tabular-nums text-slate-900">{onlineText}</p>
+                  <p className="mt-1 text-lg font-semibold tabular-nums text-white">{onlineText}</p>
                 </div>
               </div>
 
@@ -95,7 +95,7 @@ export default function DiscordStatus() {
                 onClick={fetchStatus}
                 disabled={refreshing}
                 aria-label="Refresh Discord status"
-                className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900 disabled:opacity-50"
+                className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-blue-300/30 bg-white/10 text-blue-100 transition hover:bg-white/15 hover:text-white disabled:opacity-50"
               >
                 <RefreshCw className={`h-4 w-4 ${refreshing ? 'animate-spin' : ''}`} />
               </button>
@@ -104,7 +104,7 @@ export default function DiscordStatus() {
                 href={DISCORD_INVITE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-brand-600 px-5 text-sm font-semibold text-white transition hover:bg-brand-700 hover:shadow-md hover:shadow-brand-600/20"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-white px-5 text-sm font-semibold text-brand-700 transition hover:bg-blue-50 hover:shadow-md"
               >
                 <MessageCircle className="h-4 w-4" />
                 Join Discord
