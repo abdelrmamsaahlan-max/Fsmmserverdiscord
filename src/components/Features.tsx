@@ -1,26 +1,16 @@
 import { Paintbrush, Handshake, ShieldCheck, Users, Gamepad2, TrendingUp, ArrowUpRight } from 'lucide-react';
-import candyBase from '@/assets/bases/candy.svg';
-import lavaBase from '@/assets/bases/lava.svg';
-import galaxyBase from '@/assets/bases/galaxy.svg';
-import yinYangBase from '@/assets/bases/yin-yang.svg';
-import radioactiveBase from '@/assets/bases/radioactive.svg';
-import cursedBase from '@/assets/bases/cursed.svg';
-import divineBase from '@/assets/bases/divine.svg';
-import cyberBase from '@/assets/bases/cyber.svg';
-import phantomBase from '@/assets/bases/phantom.svg';
-import crystalBase from '@/assets/bases/crystal.svg';
 
 const basePaints = [
-  { name: 'Candy', index: '100% Index', img: candyBase },
-  { name: 'Lava', index: '100% Index', img: lavaBase },
-  { name: 'Galaxy', index: '100% Index', img: galaxyBase },
-  { name: 'Yin Yang', index: '75% Index', img: yinYangBase },
-  { name: 'Radioactive', index: '75% Index', img: radioactiveBase },
-  { name: 'Cursed', index: '60% Index', img: cursedBase },
-  { name: 'Divine', index: '60% Index', img: divineBase },
-  { name: 'Cyber', index: '60% Index', img: cyberBase },
-  { name: 'Phantom', index: '60% Index', img: phantomBase },
-  { name: 'Crystal', index: '50% Index', img: crystalBase },
+  { name: 'Candy', index: '100% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Candy_Base.png' },
+  { name: 'Lava', index: '100% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Lava_Base.png' },
+  { name: 'Galaxy', index: '100% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Galaxy_Base.png' },
+  { name: 'Yin Yang', index: '75% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Yin_Yang_Base.png' },
+  { name: 'Radioactive', index: '75% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Radioactive_Base.png' },
+  { name: 'Cursed', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Cursed_Base.png' },
+  { name: 'Divine', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Divine_Base.png' },
+  { name: 'Cyber', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Cyber_Base.png' },
+  { name: 'Phantom', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Phantom_Base.png' },
+  { name: 'Crystal', index: '50% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Crystal_Base.png' },
 ];
 
 const features = [
@@ -54,6 +44,7 @@ export default function Features() {
                   alt={`${b.name} base skin`}
                   loading={i < 5 ? 'eager' : 'lazy'}
                   decoding="async"
+                  referrerPolicy="no-referrer"
                   className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/5 to-transparent pointer-events-none" />
