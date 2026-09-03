@@ -2,37 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
+html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+::selection { background-color: #2563eb; color: #ffffff; }
 
-::selection {
-  background-color: #2563eb;
-  color: #ffffff;
-}
-
-/* Scroll-reveal: starts hidden, becomes visible when .is-visible is added */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 120ms; }
 .reveal-delay-2 { transition-delay: 240ms; }
 .reveal-delay-3 { transition-delay: 360ms; }
 
-/* Cute character that briefly pops in after a full page refresh */
 @keyframes refreshPop {
   0% { opacity: 0; transform: translateY(30px) scale(0.72) rotate(-8deg); }
   18% { opacity: 1; transform: translateY(-8px) scale(1.05) rotate(3deg); }
@@ -41,11 +29,22 @@ body {
   100% { opacity: 0; transform: translateY(18px) scale(0.9) rotate(5deg); }
 }
 
+@keyframes fall {
+  0% { transform: translate3d(0, -8vh, 0); opacity: 0; }
+  12% { opacity: 1; }
+  50% { transform: translate3d(14px, 52vh, 0); }
+  88% { opacity: 0.8; }
+  100% { transform: translate3d(-10px, 112vh, 0); opacity: 0; }
+}
+
+.animate-fall {
+  animation: fall linear infinite;
+  will-change: transform, opacity;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .animate-float, .animate-drift, .animate-drift-slow, .animate-fall, .animate-pulse-ring {
-    animation: none;
-  }
+  .animate-float, .animate-drift, .animate-drift-slow, .animate-fall, .animate-pulse-ring { animation: none; }
   .refresh-pop { animation: none; opacity: 0; }
 }
