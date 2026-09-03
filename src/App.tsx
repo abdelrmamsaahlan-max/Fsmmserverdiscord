@@ -8,6 +8,7 @@ import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import AnimatedBackground from '@/components/AnimatedBackground';
+import RefreshEasterEgg from '@/components/RefreshEasterEgg';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <div className="min-h-screen text-slate-900 font-sans antialiased relative">
       <AnimatedBackground />
+      <RefreshEasterEgg />
       <Navbar />
       <main>
         <Hero />
