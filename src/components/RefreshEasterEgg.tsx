@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const MEOWL_IMAGE = 'https://cdn.discordapp.com/attachments/1429547493187784835/1544878711336083606/02177081896787500000000000000000000ffffac183399eb0c9f_V1_V1.gif?ex=6a9a1beb&is=6a98ca6b&hm=a36dcdb0e7a32f99bfca23a31dbaddf1eea627418d2be79ff9ba1eb38d6c1d9c&';
+const MEOWL_IMAGE = 'https://www.game.guide/_next/image?q=75&url=%2Fimages%2Fsteal-a-brainrot%2Fmeowl-value-steal-a-brainrot.png&w=1200';
 
 export default function RefreshEasterEgg() {
   const [visible, setVisible] = useState(true);
