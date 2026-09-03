@@ -1,16 +1,16 @@
 import { Paintbrush, Handshake, ShieldCheck, Users, Gamepad2, TrendingUp } from 'lucide-react';
 
 const basePaints = [
-  { name: 'Candy', index: '100% Index', img: 'https://www.lolga.com/uploads/images/goods/steal-a-brainrot/all-server-rebirthing-accountcandy-base.png' },
-  { name: 'Lava', index: '100% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/eef64379-7c12-4b9e-a516-fd75c270ac4e.webp' },
-  { name: 'Galaxy', index: '100% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/66a24204-030c-4366-b455-ecd4b6252e12.webp' },
-  { name: 'Yin Yang', index: '75% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/8e0de5b8-5512-4b58-87ae-bbd3c996b8cc.webp' },
-  { name: 'Radioactive', index: '75% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/3e4a52b6-f404-4881-88cc-188813d19296.webp' },
-  { name: 'Cursed', index: '60% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/ae2b15c6-829c-492c-bc1c-fe59090d2d32.webp' },
-  { name: 'Divine', index: '60% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/a2acedc7-d3e5-42d0-bba0-d9d83af51c5c.webp' },
-  { name: 'Cyber', index: '60% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/2e60c329-3e35-45bd-ba9d-da92f33da26c.webp' },
-  { name: 'Phantom', index: '60% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/213da962-00d5-4224-bef9-04126f030d2d.webp' },
-  { name: 'Crystal', index: '50% Index', img: 'https://cdn.gameboost.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1920/https%3A//cdn.gameboost.com/cms-uploads/images/2026-08-20/607ee0bc-2d69-41dc-b764-1c7b0cf5fc58.webp' },
+  { name: 'Candy', index: '100% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Candy_Base.png' },
+  { name: 'Lava', index: '100% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Lava_Base.png' },
+  { name: 'Galaxy', index: '100% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Galaxy_Base.png' },
+  { name: 'Yin Yang', index: '75% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Yin_Yang_Base.png' },
+  { name: 'Radioactive', index: '75% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Radioactive_Base.png' },
+  { name: 'Cursed', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Cursed_Base.png' },
+  { name: 'Divine', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Divine_Base.png' },
+  { name: 'Cyber', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Cyber_Base.png' },
+  { name: 'Phantom', index: '60% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Phantom_Base.png' },
+  { name: 'Crystal', index: '50% Index', img: 'https://stealabrainrot.fandom.com/wiki/Special:Redirect/file/Crystal_Base.png' },
 ];
 
 const features = [
