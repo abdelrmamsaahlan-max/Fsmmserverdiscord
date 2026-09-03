@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { Activity, ArrowUpRight, MessageCircle, RefreshCw, Users, Wifi } from 'lucide-react';
+import { ArrowUpRight, MessageCircle, RefreshCw, Users, Wifi } from 'lucide-react';
 import { DISCORD_INVITE } from '@/lib/constants';
 
 type DiscordCounts = {
@@ -49,76 +49,67 @@ export default function DiscordStatus() {
 
   return (
     <section className="relative py-12 sm:py-16">
-      <div className="max-w-5xl mx-auto px-5 sm:px-8 reveal">
-        <div className="relative overflow-hidden rounded-3xl border border-brand-200/70 bg-brand-950 shadow-xl shadow-brand-900/10">
-          <div className="absolute -right-24 -top-28 h-64 w-64 rounded-full bg-brand-500/15 blur-3xl" />
+      <div className="mx-auto max-w-5xl px-5 sm:px-8 reveal">
+        <div className="rounded-2xl border border-slate-200 bg-white shadow-sm shadow-slate-200/60">
+          <div className="flex flex-col gap-6 p-6 sm:p-7 lg:flex-row lg:items-center lg:justify-between">
+            <div className="min-w-0">
+              <div className="flex items-center gap-2.5">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inset-0 animate-ping rounded-full bg-emerald-400/60" />
+                  <span className="relative h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                </span>
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Discord community</span>
+                <span className="hidden h-1 w-1 rounded-full bg-slate-300 sm:block" />
+                <span className="text-xs text-emerald-600">Live</span>
+              </div>
 
-          <div className="relative p-6 sm:p-8">
-            <div className="flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between">
-              <div className="min-w-0">
-                <div className="flex flex-wrap items-center gap-2.5">
-                  <span className="relative flex h-2.5 w-2.5">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/60" />
-                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
-                  </span>
-                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-emerald-300">Discord status</span>
-                  <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-semibold text-white/70">LIVE</span>
+              <h2 className="mt-2.5 font-display text-2xl font-bold tracking-tight text-slate-900 sm:text-[28px]">
+                FSMM on Discord
+              </h2>
+              <p className="mt-1.5 max-w-lg text-sm leading-6 text-slate-500">
+                Trade safely, request a middleman, get base painting help, and stay connected with the community.
+              </p>
+              <p className="mt-2 text-[11px] text-slate-400">{updatedText}</p>
+            </div>
+
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="flex divide-x divide-slate-200 rounded-xl border border-slate-200 bg-slate-50">
+                <div className="min-w-[105px] px-4 py-3">
+                  <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                    <Users className="h-3.5 w-3.5" />
+                    Members
+                  </div>
+                  <p className="mt-1 text-lg font-semibold tabular-nums text-slate-900">{memberText}</p>
                 </div>
-
-                <h2 className="mt-3 font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-                  FSMM community is active.
-                </h2>
-                <p className="mt-2 max-w-lg text-sm leading-relaxed text-brand-100/65">
-                  Check the latest server numbers and join the community whenever you need a trade or service.
-                </p>
-                <div className="mt-3 flex items-center gap-2 text-xs text-brand-100/45">
-                  <Activity className="h-3.5 w-3.5" />
-                  <span>{updatedText} · Auto-updates every 60s</span>
+                <div className="min-w-[105px] px-4 py-3">
+                  <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                    <Wifi className="h-3.5 w-3.5 text-emerald-500" />
+                    Online
+                  </div>
+                  <p className="mt-1 text-lg font-semibold tabular-nums text-slate-900">{onlineText}</p>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-stretch">
-                <div className="flex min-w-[125px] items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/[0.08] text-brand-200">
-                    <Users className="h-4 w-4" />
-                  </span>
-                  <div>
-                    <p className="text-[11px] text-white/45">Members</p>
-                    <p className="text-lg font-bold tabular-nums text-white">{memberText}</p>
-                  </div>
-                </div>
+              <button
+                type="button"
+                onClick={fetchStatus}
+                disabled={refreshing}
+                aria-label="Refresh Discord status"
+                className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-900 disabled:opacity-50"
+              >
+                <RefreshCw className={`h-4 w-4 ${refreshing ? 'animate-spin' : ''}`} />
+              </button>
 
-                <div className="flex min-w-[125px] items-center gap-3 rounded-2xl border border-emerald-400/15 bg-emerald-400/[0.06] px-4 py-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-400/10 text-emerald-300">
-                    <Wifi className="h-4 w-4" />
-                  </span>
-                  <div>
-                    <p className="text-[11px] text-white/45">Online now</p>
-                    <p className="text-lg font-bold tabular-nums text-white">{onlineText}</p>
-                  </div>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={fetchStatus}
-                  disabled={refreshing}
-                  aria-label="Refresh Discord status"
-                  className="inline-flex h-12 w-12 shrink-0 items-center justify-center self-center rounded-2xl border border-white/10 bg-white/[0.06] text-white/55 transition-all hover:bg-white/10 hover:text-white disabled:opacity-50 sm:h-auto"
-                >
-                  <RefreshCw className={`h-4 w-4 ${refreshing ? 'animate-spin' : ''}`} />
-                </button>
-
-                <a
-                  href={DISCORD_INVITE}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-5 py-3 text-sm font-bold text-brand-950 transition-all hover:-translate-y-0.5 hover:shadow-lg"
-                >
-                  <MessageCircle className="h-4 w-4" />
-                  Join Discord
-                  <ArrowUpRight className="h-4 w-4" />
-                </a>
-              </div>
+              <a
+                href={DISCORD_INVITE}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-brand-600 px-5 text-sm font-semibold text-white transition hover:bg-brand-700 hover:shadow-md hover:shadow-brand-600/20"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Join Discord
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
             </div>
           </div>
         </div>
