@@ -3,48 +3,26 @@
 @tailwind utilities;
 
 html { scroll-behavior: smooth; }
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background: #f8fafc; }
 ::selection { background-color: #2563eb; color: #ffffff; }
 
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 120ms; }
 .reveal-delay-2 { transition-delay: 240ms; }
 .reveal-delay-3 { transition-delay: 360ms; }
 
-@keyframes refreshPop {
-  0% { opacity: 0; transform: translateY(30px) scale(0.72) rotate(-8deg); }
-  18% { opacity: 1; transform: translateY(-8px) scale(1.05) rotate(3deg); }
-  34% { transform: translateY(0) scale(1) rotate(0deg); }
-  72% { opacity: 1; transform: translateY(-4px) scale(1.02) rotate(-2deg); }
-  100% { opacity: 0; transform: translateY(18px) scale(0.9) rotate(5deg); }
-}
+.fsmm-grid { background-image: linear-gradient(rgba(37,99,235,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(37,99,235,.045) 1px, transparent 1px); background-size: 44px 44px; mask-image: linear-gradient(to bottom, black 0%, rgba(0,0,0,.72) 55%, transparent 100%); }
+.fsmm-glow { box-shadow: 0 0 0 1px rgba(59,130,246,.08), 0 18px 55px rgba(37,99,235,.10); }
+.fsmm-shine { position: relative; overflow: hidden; }
+.fsmm-shine::after { content: ''; position: absolute; inset: -120% 35% -120% -35%; background: linear-gradient(105deg, transparent 38%, rgba(255,255,255,.34) 50%, transparent 62%); transform: translateX(-120%); transition: transform .9s ease; pointer-events: none; }
+.fsmm-shine:hover::after { transform: translateX(220%); }
+.fsmm-ring { box-shadow: 0 0 0 1px rgba(59,130,246,.08), 0 0 0 10px rgba(59,130,246,.025), 0 22px 70px rgba(37,99,235,.10); }
 
-@keyframes fall {
-  0% { transform: translate3d(0, -8vh, 0); opacity: 0; }
-  12% { opacity: 1; }
-  50% { transform: translate3d(14px, 52vh, 0); }
-  88% { opacity: 0.8; }
-  100% { transform: translate3d(-10px, 112vh, 0); opacity: 0; }
-}
+@keyframes refreshPop { 0% { opacity: 0; transform: translateY(30px) scale(.72) rotate(-8deg); } 18% { opacity: 1; transform: translateY(-8px) scale(1.05) rotate(3deg); } 34% { transform: translateY(0) scale(1) rotate(0deg); } 72% { opacity: 1; transform: translateY(-4px) scale(1.02) rotate(-2deg); } 100% { opacity: 0; transform: translateY(18px) scale(.9) rotate(5deg); } }
+@keyframes fall { 0% { transform: translate3d(0,-8vh,0); opacity: 0; } 12% { opacity: 1; } 50% { transform: translate3d(14px,52vh,0); } 88% { opacity: .8; } 100% { transform: translate3d(-10px,112vh,0); opacity: 0; } }
+@keyframes pulseGlow { 0%,100% { opacity: .35; transform: scale(.96); } 50% { opacity: .75; transform: scale(1.04); } }
+.animate-fall { animation: fall linear infinite; will-change: transform, opacity; }
+.animate-pulse-glow { animation: pulseGlow 5s ease-in-out infinite; will-change: transform, opacity; }
 
-.animate-fall {
-  animation: fall linear infinite;
-  will-change: transform, opacity;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .animate-float, .animate-drift, .animate-drift-slow, .animate-fall, .animate-pulse-ring { animation: none; }
-  .refresh-pop { animation: none; opacity: 0; }
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .reveal { opacity: 1; transform: none; transition: none; } .animate-float, .animate-drift, .animate-drift-slow, .animate-fall, .animate-pulse-ring, .animate-pulse-glow { animation: none; } .refresh-pop { animation: none; opacity: 0; } .fsmm-shine::after { display: none; } }
