@@ -7,7 +7,6 @@ const links = [
   { label: 'Services', href: '#services' },
   { label: 'Base Painting', href: '#base-paints' },
   { label: 'Middleman', href: '#how-it-works' },
-  { label: 'Vouches', href: '#vouches' },
   { label: 'FAQ', href: '#faq' },
 ];
 
